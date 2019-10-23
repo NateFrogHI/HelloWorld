@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Multiplication Calculator</h2>
+        <p>Type in your values to try it out:</p>
+        <p>
+            Name: <input type="text" id='Name'><br>
+            Age: <input type="text" id='Age'><br>
+            Number: <input type="text" id='FirstNumber'><br>
+            Multiplied by: <input type="text" id='multBy'><br>
+        </p>
+
+        <button type="button" onclick="multiplication()">Click Me!</button>
+
+        <p id="Answer">i love math</p>
+        <p id="Message">who are you</p>
+
+        <script>
+            function multiplication() {
+                let name = document.getElementById("Name").value;
+                let age = parseFloat(document.getElementById("Age").value);
+                let firstNumber = parseFloat(document.getElementById("FirstNumber").value);
+                let multBy = parseInt(document.getElementById("multBy").value);
+                let answer = 0;
+                let message = '';
+
+                for(let index = 0; index < multBy; index = index + 1) {
+                    answer = answer + firstNumber;
+                }
+
+                if(age > answer){
+                    message = 'Hello ' + name + ' you are older than the answer!';
+                } else if(age == answer){
+                    message = 'Hello ' + name + ' you are equal to the answer!';
+                } else {
+                    message = 'Hello ' + name + ' you are younger than the answer!';
+                }
+                document.getElementById("Answer").innerHTML = answer;
+                document.getElementById("Message").innerHTML = message;
+            }
+        </script> 
+    </body>
+</html>
